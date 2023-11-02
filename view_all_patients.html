@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>UHealth Doctor Portal</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="view_all_patients.css">
+</head>
+
+<body class="">
+    <div class="sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark navSize">
+            <div class="container-fluid">
+                <div class="d-flex">
+                    <a class="navbar-brand fs-4 mx-3 pt-2">UPatient Tracker System</a>
+                </div>
+                <form class="d-flex text-center">
+                    <label id="loginName" class="nav-item loginName fs-5"></label>
+                    <img src="house.svg" alt="Home" class="icon ms-2 me-3">
+                    <img src="person-circle.svg" alt="User" class="icon mx-3">
+                </form>
+            </div>
+        </nav>
+        <nav class="navbar navbar-expand-lg bg-secondary">
+            <div class="container-fluid">
+                <form class="ms-auto">
+                    <div class="col">
+                        <div class="nav-item sign-in mb-1 fs-6 mx-2 pt-1">
+                            <button type="button" class="btn btn-secondary" id="view_all">View All Patients</button>
+                            <button type="button" class="btn btn-secondary" id="sign_out">Sign Out</button>
+                        </div>
+                    </div>
+                    <form>
+            </div>
+        </nav>
+    </div>
+
+    <div class="row spacer">
+
+        <div class="col">
+        </div>
+        <div class="col-8 bg-body-secondary rounded">
+            <p class="fst-italic fw-lighter mt-3">Basic information shown here, please click to get more information.</p>
+            <div class="list-group mt-3 mb-3">
+                <a href="#" class="list-group-item list-group-item-action">Test Patient1 ......</a>
+                <a href="#" class="list-group-item list-group-item-action">Yujin Qin, 735263939, yujinqin@umass.edu</a>
+                <a href="#" class="list-group-item list-group-item-action">Yi Ding, 2748392047, yding0@umass.edu</a>
+                <a href="#" class="list-group-item list-group-item-action">Yuqi Liu, 7384920364, yuqliu@umass.edu</a>
+                <a href="#" class="list-group-item list-group-item-action">Testing Patient2 ......</a>
+            </div>
+
+
+
+
+        </div>
+        <div class="col">
+        </div>
+    </div>
+</body>
+
+</html>

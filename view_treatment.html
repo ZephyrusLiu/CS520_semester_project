@@ -8,7 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 
-    <link rel="stylesheet" type="text/css" href="add_medical_his.css">
+    <link rel="stylesheet" type="text/css" href="view_treatment.css">
 </head>
 
 <body class="">
@@ -44,49 +44,50 @@
         </div>
         <div class="col-6 bg-body-secondary rounded">
             <div class="col d-flex justify-content-center">
-                <label class="mb-3 fs-2">Add Medical History For Your Patient</label>
-            </div>
-            <div class="col d-flex justify-content-center">
-                <label class="mb-3 fs-4">Routine Testing Data</label>
+                <label class="mt-3 mb-3 fs-4">Treatment Records</label>
             </div>
             <form>
-                <div class="mb-3">
-                    <label class="form-label">Heart Rate(Last Monitored):</label>
-                    <input type="text" class="form-control" id="heart_rate">
+
+
+                <div class="mb-2">
+                    <label class="form-label">Heart Rate Records</label>
+                    <textarea type="text" class="form-control" readonly="True" rows="2" id="heart_rate"></textarea>
                 </div>
 
-                <div class="mb-3">
-                    <label class="form-label">Oximetry(Last Monitored):</label>
-                    <input type="text" class="form-control" id="oximetry">
+
+                <div class="mb-2">
+                    <label class="form-label">High Blood Pressure Records</label>
+                    <textarea type="text" class="form-control" readonly="True" rows="2" id="h_pressure"></textarea>
                 </div>
 
-                <div class="row">
-                    <div class="col-6">
-                        <div class="mb-3">
-                            <label class="form-label">High Blood Pressure(Last Monitored):</label>
-                            <input type="text" class="form-control" id="high_pressure">
-                        </div>
+                <div class="mb-2">
+                    <label class="form-label">Low Blood Pressure Records</label>
+                    <textarea type="text" class="form-control" readonly="True" rows="2" id="l_pressure"></textarea>
+                </div>
+
+                <div class="mb-2">
+                    <label class="form-label">Treatment Records</label>
+                    <div class="list-group mb-3">
+                        <a href="#" class="list-group-item list-group-item-action">Record 1 ......</a>
+                        <a href="#" class="list-group-item list-group-item-action">Record 2 ......</a>
+                        <a href="#" class="list-group-item list-group-item-action">Record 3 ......</a>
+                        <a href="#" class="list-group-item list-group-item-action">Record 4 ......</a>
+                        <a href="#" class="list-group-item list-group-item-action">Record 5 ......</a>
                     </div>
-                    <div class="col-6">
-                        <div class="mb-3">
-                            <label class="form-label">Low Blood Pressure(Last Monitored):</label>
-                            <input type="text" class="form-control" id="low_pressure">
-                        </div>
+                </div>
+
+
+                <p class="fst-italic fw-lighter">Feel free to click buttons below to get more information.</p>
+
+
+                <div class="row mb-3">
+                    <div class="col-6 d-flex justify-content-center">
+                        <button type="button" class="btn btn-info my-button">View Personal Information</button>
                     </div>
-                </div>
 
-
-                <div class="mb-3">
-                    <label class="form-label">Last Treatment Record:</label>
-                    <textarea class="form-control" id="record" rows="8"></textarea>
-                    <!-- <input type="text" class="form-control" rows="3" type="number"> -->
-                </div>
-
-                <p class="fst-italic fw-lighter">Remember to click COMPLETE before you go to other webpages,
-                    or you will lost the records.</p>
-
-                <div class="mb-3 d-flex justify-content-center">
-                    <button type="button" class="btn btn-primary" id="complete">Complete!</button>
+                    <div class="col-6 d-flex justify-content-center">
+                        <button type="button" class="btn btn-info">View Health Information</button>
+                    </div>
                 </div>
 
 
