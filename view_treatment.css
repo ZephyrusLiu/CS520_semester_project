@@ -1,19 +1,4 @@
-#viewAll {
-    color: white; 
-}
-
-#signOut {
-    color: white; 
-}
-  
-#signUp {
-    color: white; 
-}
-
-.spacer {
-    padding-top: 80px;
-    padding-bottom: 40px
-}
+@import "main.css";
 
 .my-button {
     text-decoration: white;
