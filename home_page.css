@@ -1,0 +1,8 @@
+@import "main.css";
+
+.home_page{
+    background-image: url('bc.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+}

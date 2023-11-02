@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>UHealth Doctor Portal</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="vitalsigns.css">
+</head>
+
+<body class="home_page">
+    <div class="sticky-top home_page">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark navSize">
+            <div class="container-fluid">
+                <div class="d-flex">
+                    <a class="navbar-brand fs-4 mx-2 pt-2">UPatient Tracker System</a>
+                </div>
+                <form class="d-flex text-center">
+                    <label id="loginName" class="nav-item loginName fs-5"></label>
+                    <img src="house.svg" alt="Home" class="icon ms-2 me-3">
+                    <img src="person-circle.svg" alt="User" class="icon mx-3">
+                </form>
+            </div>
+        </nav>
+        <nav class="navbar navbar-expand-lg bg-secondary">
+            <div class="container-fluid">
+                <form class="ms-auto">
+                    <label id="logIn" class="nav-item sign-in fs-6 mx-2 pt-2">Log in</label>
+                    <label id="signUp" class="nav-item sign-in fs-6 mx-2 pt-2">Sign Up</label>
+                    <!-- <label id="signOut" class="nav-item sign-in fs-6 mx-2 pt-2">Sign Out</label> -->
+                </form>
+            </div>
+        </nav>
+    </div>
+
+    <div class="row spacer">
+        <div class="col">
+        </div>
+        <div class="col-6 bg-body-secondary rounded">
+            <div class = "col d-flex justify-content-center">
+                <label class="mb-3 fs-2">Vital Sign of the Patient</label>
+            </div>
+            <form>
+                <div class="mb-3 d-flex justify-content-center">
+                    <label class="form-label">Please update following information to keep on track. </label>
+                </div>
+                <div class = "row">
+                    <div class = "col-6">
+                        <div class="mb-3">
+                            <label class="form-label">Height:</label>
+                            <input type="first_Name" class="form-control" id="first_Name">
+                        </div>
+                    </div>
+                    <div class = "col-6">
+                        <div class="mb-3">
+                            <label class="form-label">Weight:</label>
+                            <input type="last_Name" class="form-control" id="last_Name">
+                        </div>
+                    </div>
+                </div>
+                <div class = "row">
+                    <div class = "col-6">
+                        <div class="mb-3">
+                            <label class="form-label">Body Temprature:</label>
+                            <input type="temp" class="form-control" id="date_Bith">
+                        </div>
+                    </div>
+
+                    <div class = "col-6">
+                        <div class="mb-3">
+                            <label class="form-label">Blood Pressure:</label>
+                            <input type="temp" class="form-control" id="date_Bith">
+                        </div>
+                    </div>
+                </div>
+
+                <div class = "row">
+                    <div class = "col-6">
+                        <div class="mb-3">
+                            <label class="form-label">Pulse Rate:</label>
+                            <input type="temp" class="form-control" id="date_Bith">
+                        </div>
+                    </div>
+
+                    <div class = "col-6">
+                        <div class="mb-3">
+                            <label class="form-label">Blood Oxygen:</label>
+                            <input type="temp" class="form-control" id="date_Bith">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Additional Information:</label>
+                    <textarea type="patient_id" class="form-control" id="patient_id" rows="3"></textarea>
+                </div>
+                
+                <div class = "row">
+                    <div class="col-6 d-flex justify-content-center">
+                        <button type="button" class="btn btn-primary">Save change</button>
+                    </div>
+                    <div class="col-6 d-flex justify-content-center">
+                        <button type="button" class="btn btn-primary">Next</button>
+                    </div>
+                </div>
+
+                <div class="row gap"></div>
+
+              </form>
+        </div>
+        <div class="col">
+        </div>
+    </div>
+</body>
+
+</html>
+

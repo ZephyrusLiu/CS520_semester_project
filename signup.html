@@ -8,11 +8,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 
-    <link rel="stylesheet" type="text/css" href="patient_profile.css">
+    <link rel="stylesheet" type="text/css" href="signup.css">
 </head>
 
 <body class="home_page">
-    <div class="sticky-top">
+    <div class="sticky-top home_page">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark navSize">
             <div class="container-fluid">
                 <div class="d-flex">
@@ -28,9 +28,9 @@
         <nav class="navbar navbar-expand-lg bg-secondary">
             <div class="container-fluid">
                 <form class="ms-auto">
-                    <!-- <label id="logIn" class="nav-item sign-in fs-6 mx-2 pt-2">Log in</label>
-                    <label id="signUp" class="nav-item sign-in fs-6 mx-2 pt-2">Sign Up</label> -->
-                    <label id="signOut" class="nav-item sign-in fs-6 mx-2 pt-2">Sign Out</label>
+                    <label id="logIn" class="nav-item sign-in fs-6 mx-2 pt-2">Log in</label>
+                    <label id="signUp" class="nav-item sign-in fs-6 mx-2 pt-2">Sign Up</label>
+                    <!-- <label id="signOut" class="nav-item sign-in fs-6 mx-2 pt-2">Sign Out</label> -->
                 </form>
             </div>
         </nav>
@@ -41,17 +41,15 @@
         </div>
         <div class="col-6 bg-body-secondary rounded">
             <div class = "col d-flex justify-content-center">
-                <label class="mb-3 fs-2">Patient Profile</label>
-            </div>
-            <div class = "col d-flex justify-content-center">
-                <label class="mb-3 fs-4">Basic Information</label>
+                <label class="mb-3 fs-2">Sign up a new Account</label>
             </div>
             <form>
-                <div class="mb-3">
-                  <label class="form-label">Patient ID:</label>
-                  <input type="patient_id" class="form-control" id="patient_id">
+                <div class="mb-3 d-flex justify-content-center">
+                    <label class="form-label">Welcom to our system!</label>
                 </div>
-
+                <div class="mb-3 d-flex justify-content-center">
+                    <label class="form-label">Please fillout following information to create an account. </label>
+                </div>
                 <div class = "row">
                     <div class = "col-6">
                         <div class="mb-3">
@@ -66,7 +64,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class = "row">
                     <div class = "col-6">
                         <div class="mb-3">
@@ -87,41 +84,29 @@
                         </div>
                     </div>
                 </div>
-                
-                <div class = "col d-flex justify-content-center">
-                    <label class="mb-3 fs-4">Contact Information</label>
-                </div>
-
                 <div class="mb-3">
-                    <label class="form-label">Phone/Tel:</label>
-                    <input type="number" class="form-control" id="number">
-                </div>
-
-                <div class="mb-3">
-                    <label class="form-label">Email:</label>
-                    <input type="email" class="form-control" id="email">
-                </div>
-
-                <div class="mb-3">
-                    <label class="form-label">Emergency Contact Phone:</label>
-                    <input type="emergency" class="form-control" id="emergency">
-                </div>
-
-                <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="insurance">
-                    <label class="form-check-label">Does this patient have health insurance?</label>
+                    <label class="form-label">Username / Email adress:</label>
+                    <input type="patient_id" class="form-control" id="patient_id">
                   </div>
-  
-                  <div class = "row">
-                      <div class="col-6 d-flex justify-content-center">
-                          <button type="button" class="btn btn-primary">Save change</button>
-                      </div>
-                      <div class="col-6 d-flex justify-content-center">
-                          <button type="button" class="btn btn-primary">Next</button>
-                      </div>
-                  </div>
-  
+                <div class="mb-3">
+                    <label class="form-label">Passward:</label>
+                    <input type="patient_id" class="form-control" id="patient_id">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Confirm Passward:</label>
+                    <input type="patient_id" class="form-control" id="patient_id">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Profile:</label>
+                    <textarea type="patient_id" class="form-control" id="patient_id" rows="3"></textarea>
+                </div>
+                <div class = "row">
+                    <div class="col-12 d-flex justify-content-center">
+                        <button type="button" class="btn btn-primary btn-block" >Create account!</button>
+                    </div>
+                </div>
                 <div class="row gap"></div>
+
 
               </form>
         </div>
