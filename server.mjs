@@ -114,7 +114,7 @@ createServer(async (req, res) => {
       parsed.pathname === "/"
         ? "homepage.html"
         : parsed.pathname.replace("/", "");
-    console.log("trying to serve " + filename + "...");
+    // console.log("trying to serve " + filename + "...");
     serveStaticFile(res, filename);
   }
 }).listen(process.env.PORT || 8080);
