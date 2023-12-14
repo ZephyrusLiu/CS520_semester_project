@@ -1,4 +1,5 @@
 const express = require('express');
+const nomgoose = require('mongoose');
 // const fileUpload = require('express-fileupload');
 
 const app = express();
@@ -22,7 +23,6 @@ app.use(express.static(__dirname));
 // };
 
 app.get('/', function (req, res) {
-	console.log(req.params);
 	res.sendFile(__dirname + '/homepage.html');
 });
 
