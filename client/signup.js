@@ -1,4 +1,47 @@
-'use strict';
+"use strict";
+
+document.addEventListener("DOMContentLoaded", () => {
+  document
+    .getElementById("createAccount")
+    .addEventListener("click", async () => {
+      console.log("ok");
+      const firstname = document.getElementById("first_Name").value;
+      const lastname = document.getElementById("last_Name").value;
+      const birthday = document.getElementById("birthday").value;
+      const gender = document.getElementById("disabledSelect").value;
+      const email = document.getElementById("email").value;
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      const cpassword = document.getElementById("c_password").value;
+      const profile = document.getElementById("profile").value;
+
+      const response = await fetch("/signup", {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json;charset=utf-8",
+        },
+        body: JSON.stringify({
+          firstname: firstname,
+          lastname: lastname,
+          birthday: birthday,
+          gender: gender,
+          email: email,
+          username: username,
+          password: password,
+          cpassword: cpassword,
+          profile: profile,
+        }),
+      });
+      const check = await response.json();
+      if (check) {
+        alert("Username Already Existed!");
+      } else {
+        location.href = "homepage.html";
+        alert("Sign Up Succed!");
+      }
+    });
+});
+
 
 // NavBar functions
 function goLogin() {
@@ -68,3 +111,6 @@ function refreshSign() {
 //         select.appendChild(optionElement);
 //     }
 // };
+
+
+
