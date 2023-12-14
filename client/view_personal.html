@@ -50,102 +50,160 @@
                 <label class="mt-3 mb-3 fs-4">Personal Information</label>
             </div>
             <form>
-                <div class="row">
-                    <div class="col-4">
-                        <div class="mb-2">
-                            <label class="form-label">Patient ID</label>
-                            <input type="text" class="form-control" readonly="True" id="patient_id">
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="mb-2">
-                            <label class="form-label">First Name</label>
-                            <input type="text" class="form-control" readonly="True" id="first_name">
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="mb-2">
-                            <label class="form-label">Last Name</label>
-                            <input type="text" class="form-control" readonly="True" id="last_name">
-                        </div>
-                    </div>
+                <div class="col d-flex justify-content-center">
+                    <label class="mb-3 mt-3 fs-5">Personal Information For Your Patient</label>
                 </div>
+                <form>
+                    <div class="mb-3">
+                        <label class="form-label">Patient ID:</label>
+                        <input type="patient_id" class="form-control" id="patient_id">
+                    </div>
 
-                <div class="row">
-                    <div class="col-6">
-                        <div class="mb-2">
-                            <label class="form-label">Date of Birth</label>
-                            <input type="text" class="form-control" readonly="True" id="date_birth">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="mb-3">
+                                <label class="form-label">First Name:</label>
+                                <input type="first_Name" class="form-control" id="first_Name">
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="mb-3">
+                                <label class="form-label">Last Name:</label>
+                                <input type="last_Name" class="form-control" id="last_Name">
+                            </div>
                         </div>
                     </div>
-                    <div class="col-6">
-                        <div class="mb-2">
-                            <label class="form-label">Gender</label>
-                            <input type="text" class="form-control" readonly="True" id="gender">
+
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="mb-3">
+                                <label class="form-label">Date of Birth:</label>
+                                <input type="date" class="form-control" id="birthday">
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="mb-3">
+                                <label class="form-label">Gender:</label>
+                                <select id="disabledSelect" class="form-select">
+                                    <option selected></option>
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
-                </div>
 
+                    <div class="col d-flex justify-content-center">
+                        <label class="mb-3 mt-3 fs-5">Contact Information</label>
+                    </div>
 
-                <div class="row">
-                    <div class="col-6">
-                        <div class="mb-2">
-                            <label class="form-label">Contact Phone Number</label>
-                            <input type="text" class="form-control" readonly="True" id="phone">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="mb-2">
+                                <label class="form-label">Contact Phone Number</label>
+                                <input type="text" class="form-control" id="phone">
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="mb-2">
+                                <label class="form-label">Contact Email</label>
+                                <input type="text" class="form-control" id="email">
+                            </div>
                         </div>
                     </div>
-                    <div class="col-6">
-                        <div class="mb-2">
-                            <label class="form-label">Contact Email</label>
-                            <input type="text" class="form-control" readonly="True" id="email">
+
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="mb-2">
+                                <label class="form-label">Emergency Contact Phone Number</label>
+                                <input type="text" class="form-control" id="e_phone">
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="mb-2">
+                                <label class="form-label">Emergency Contact Email</label>
+                                <input type="text" class="form-control" id="e_email">
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-6">
-                        <div class="mb-2">
-                            <label class="form-label">Emergency Contact Phone Number</label>
-                            <input type="text" class="form-control" readonly="True" id="e_phone">
+                    <div class="col d-flex justify-content-center">
+                        <label class="mb-3 fs-5 mt-3">Basic Health Information</label>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="mb-2">
+                                <label class="form-label">Blood Type</label>
+                                <input type="text" class="form-control" id="blood_type">
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="mb-2">
+                                <label class="form-label">Height</label>
+                                <input type="text" class="form-control" id="height">
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="mb-2">
+                                <label class="form-label">Weight</label>
+                                <input type="text" class="form-control" id="weight">
+                            </div>
                         </div>
                     </div>
-                    <div class="col-6">
-                        <div class="mb-2">
-                            <label class="form-label">Emergency Contact Email</label>
-                            <input type="text" class="form-control" readonly="True" id="e_email">
+
+
+                    <div class="mb-2">
+                        <label class="form-label">Medical History</label>
+                        <textarea type="text" class="form-control" rows="2" id="medical_his"></textarea>
+                    </div>
+
+
+                    <div class="mb-2">
+                        <label class="form-label">Family Medical History</label>
+                        <textarea type="text" class="form-control" rows="2" id="family_medical_his"></textarea>
+                    </div>
+
+                    <div class="mb-2">
+                        <label class="form-label">Allergic Conditions</label>
+                        <textarea type="text" class="form-control" rows="2" id="allergic"></textarea>
+                    </div>
+
+
+                    <div class="mb-3">
+                        <label class="form-label">Additional Information:</label>
+                        <textarea type="patient_id" class="form-control" id="addition_info" rows="3"></textarea>
+                    </div>
+
+                    <div class="row gap"></div>
+
+
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="insurance">
+                        <label class="form-check-label">Does this patient have health insurance?</label>
+                    </div>
+
+                    <p class="fst-italic fw-lighter">Remember to click SAVE CHANGE before you go to next page to add
+                        health information,
+                        or you will lost the records.</p>
+
+                    <div class="row mb-3 mt-3">
+                        <div class="col-6 d-flex justify-content-center">
+                            <button type="button" class="btn btn-info" id="update" onclick="">Update
+                                Information</button>
+                        </div>
+
+                        <div class="col-6 d-flex justify-content-center">
+                            <button type="button" class="btn btn-info" id="view_medical"
+                                onclick="goViewTreatment()">View
+                                Treatment History</button>
                         </div>
                     </div>
-                </div>
-
-                <div class="mb-2">
-                    <label class="form-label">Primary Care Doctor</label>
-                    <input type="text" class="form-control" readonly="True" id="doctor">
-                </div>
-
-                <div class="mb-2">
-                    <label class="form-label">Most Recent Appointment</label>
-                    <input type="text" class="form-control" readonly="True" id="appointment">
-                </div>
 
 
-
-                <p class="fst-italic fw-lighter">Feel free to click buttons below to get more information.</p>
-
-
-                <div class="row mb-3">
-                    <div class="col-6 d-flex justify-content-center">
-                        <button type="button" class="btn btn-info" id="view_health" onclick="goViewHealth()">View Health
-                            Information</button>
-                    </div>
-
-                    <div class="col-6 d-flex justify-content-center">
-                        <button type="button" class="btn btn-info" id="view_medical" onclick="goViewTreatment()">View
-                            Treatment History</button>
-                    </div>
-                </div>
-
-
-            </form>
+                </form>
         </div>
         <div class="col">
         </div>
