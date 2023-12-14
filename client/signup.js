@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
         alert("Username Already Existed!");
       } else {
         location.href = "homepage.html";
-        alert("Sign Up Succed!");
+        alert("Sign Up Succeed!");
       }
     });
 });

@@ -13,6 +13,14 @@ function goSignUp() {
     window.location.href = "./signup.html";
 }
 
+function goViewPersonal() {
+    window.location.href = "./view_personal.html";
+}
+
+function goViewHealth() {
+    window.location.href = "./view_health.html";
+}
+
 function signOut() {
     fetch(window.location.origin + '/logout')
         .then((response) => response.json())
@@ -22,7 +30,7 @@ function signOut() {
     refreshSign();
 }
 
-function goAllPatients(){
+function goAllPatients() {
     window.location.href = "./view_all_patients.html";
 }
 
