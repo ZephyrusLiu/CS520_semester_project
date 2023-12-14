@@ -1,10 +1,10 @@
 "use strict";
 
-document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("add").addEventListener("click", async () => {
-    location.href = "add_personal_info.html";
-  });
-});
+// document.addEventListener("DOMContentLoaded", () => {
+//   document.getElementById("add").addEventListener("click", async () => {
+//     location.href = "add_personal_info.html";
+//   });
+// });
 
 // NavBar functions
 function goLogin() {
@@ -23,10 +23,18 @@ function goAllPatients() {
   window.location.href = "./view_all_patients.html";
 }
 
+function goAddPatient() {
+  window.location.href = "./add_personal_info.html";
+}
+
+function goViewPatients() {
+  window.location.href = "./view_all_patients.html";
+}
+
 function signOut() {
   fetch(window.location.origin + "/logout")
     .then((response) => response.json())
-    .then((data) => {});
+    .then((data) => { });
   localStorage.removeItem("username");
   localStorage.removeItem("email");
   refreshSign();
