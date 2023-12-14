@@ -43,11 +43,14 @@ try {
 
 const db = client.db("PatientTracker");
 const collection1 = db.collection("doctor");
+const collection2 = db.collection("patient");
 
 const doctor = await collection1.find().toArray();
+const patient = await collection2.find().toArray();
 
 let database = {};
 database["doctor"] = doctor;
+database["patient"] = patient;
 
 createServer(async (req, res) => {
   const parsed = parse(req.url, true);
@@ -107,6 +110,42 @@ createServer(async (req, res) => {
       } else {
         res.end(JSON.stringify(false));
       }
+    });
+  }
+  if (parsed.pathname === "/add_personal_info") {
+    let body = "";
+    let result = false;
+    req.on("data", (data) => (body += data));
+    req.on("end", async () => {
+      const data = JSON.parse(body);
+      const output = {
+        patient_id: data.patient_id,
+        firstname: data.firstname,
+        lastname: data.lastname,
+        birthday: data.birthday,
+        gender: data.gender,
+        phone: data.phone,
+        email: data.email,
+        e_phone: data.e_phone,
+        e_email: data.e_email,
+        has_insurance: data.has_insurance,
+      };
+      for (let element of database.patient) {
+        if (output.patient_id === element.patient_id) {
+          result = true;
+          break;
+        }
+      }
+      if (!result) {
+        database.patient.push(output);
+        try {
+          await collection2.insertOne(output);
+          console.log("Patient information added successfully!");
+        } catch (error) {
+          console.error("Error inserting into MongoDB:", error);
+        }
+      }
+      res.end(JSON.stringify(result));
     });
   } else {
     const filename =

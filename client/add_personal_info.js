@@ -1,61 +1,100 @@
-'use strict';
+"use strict";
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("save").addEventListener("click", async () => {
+    console.log("ok");
+    const patient_id = document.getElementById("patient_id").value;
+    const firstname = document.getElementById("first_Name").value;
+    const lastname = document.getElementById("last_Name").value;
+    const birthday = document.getElementById("birthday").value;
+    const gender = document.getElementById("disabledSelect").value;
+    const phone = document.getElementById("phone").value;
+    const email = document.getElementById("email").value;
+    const e_phone = document.getElementById("e_phone").value;
+    const e_email = document.getElementById("e_email").value;
+    let has_insurance = false;
+    if (document.getElementById("insurance").value == "on") {
+      has_insurance = true;
+    }
+
+    const response = await fetch("/add_personal_info", {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json;charset=utf-8",
+      },
+      body: JSON.stringify({
+        patient_id: patient_id,
+        firstname: firstname,
+        lastname: lastname,
+        birthday: birthday,
+        gender: gender,
+        phone: phone,
+        email: email,
+        e_phone: e_phone,
+        e_email: e_email,
+        has_insurance: has_insurance,
+      }),
+    });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("next").addEventListener("click", async () => {
+    location.href = "add_health_info.html";
+  });
+});
 
 // NavBar functions
 function goLogin() {
-    window.location.href = "./login.html";
+  window.location.href = "./login.html";
 }
 
 function goHome() {
-    window.location.href = "./homepage.html";
+  window.location.href = "./homepage.html";
 }
 
 function goSignUp() {
-    window.location.href = "./signup.html";
+  window.location.href = "./signup.html";
 }
 
-function goAllPatients(){
-    window.location.href = "./view_all_patients.html";
+function goAllPatients() {
+  window.location.href = "./view_all_patients.html";
 }
-
 
 function signOut() {
-    fetch(window.location.origin + '/logout')
-        .then((response) => response.json())
-        .then((data) => { });
-    localStorage.removeItem("username");
-    localStorage.removeItem("email");
-    refreshSign();
+  fetch(window.location.origin + "/logout")
+    .then((response) => response.json())
+    .then((data) => {});
+  localStorage.removeItem("username");
+  localStorage.removeItem("email");
+  refreshSign();
 }
 
-
-
 function goPersonal() {
-    const username = localStorage.getItem('username');
-    if (username) {
-        window.location.href = "./view_personal.html";
-    } else {
-        localStorage.setItem('nextPage', 'profile.html');
-        window.location.href = "./login.html";
-    }
+  const username = localStorage.getItem("username");
+  if (username) {
+    window.location.href = "./view_personal.html";
+  } else {
+    localStorage.setItem("nextPage", "profile.html");
+    window.location.href = "./login.html";
+  }
 }
 
 function refreshSign() {
-    const username = localStorage.getItem("username");
-    const signIn = document.getElementById("signIn");
-    const signOut = document.getElementById("signOut");
-    const loginName = document.getElementById("loginName");
-    if (username) {
-        signIn.classList.add('hidden');
-        signOut.classList.remove('hidden');
-        loginName.innerHTML = 'Signed in as ' + username;
-    } else {
-        signIn.classList.remove('hidden');
-        signOut.classList.add('hidden');
-        loginName.innerHTML = '';
-    }
+  const username = localStorage.getItem("username");
+  const signIn = document.getElementById("signIn");
+  const signOut = document.getElementById("signOut");
+  const loginName = document.getElementById("loginName");
+  if (username) {
+    signIn.classList.add("hidden");
+    signOut.classList.remove("hidden");
+    loginName.innerHTML = "Signed in as " + username;
+  } else {
+    signIn.classList.remove("hidden");
+    signOut.classList.add("hidden");
+    loginName.innerHTML = "";
+  }
 }
-
-
 
 // Index functions
 // window.onload = async function () {
