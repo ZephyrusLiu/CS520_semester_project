@@ -16,10 +16,18 @@ document.addEventListener("DOMContentLoaded", () => {
         password: password,
       }),
     });
+
+
+
     const check = await response.json();
     if (!check) {
       alert("Wrong password!");
     } else {
+      localStorage.setItem('currentUser', JSON.stringify({
+        username: username,
+        password: password,
+      }));
+      console.log(JSON.parse(localStorage.getItem('currentUser')));
       location.href = "dashboard.html";
     }
   });
@@ -41,7 +49,7 @@ function goSignUp() {
 function signOut() {
   fetch(window.location.origin + "/logout")
     .then((response) => response.json())
-    .then((data) => {});
+    .then((data) => { });
   localStorage.removeItem("username");
   localStorage.removeItem("email");
   refreshSign();

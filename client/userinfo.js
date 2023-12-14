@@ -1,46 +1,79 @@
 "use strict";
 
-document.addEventListener("DOMContentLoaded", () => {
-  document
-    .getElementById("createAccount")
-    .addEventListener("click", async () => {
-      console.log("ok");
-      const firstname = document.getElementById("first_Name").value;
-      const lastname = document.getElementById("last_Name").value;
-      const birthday = document.getElementById("birthday").value;
-      const gender = document.getElementById("disabledSelect").value;
-      const email = document.getElementById("email").value;
-      const username = document.getElementById("username").value;
-      const password = document.getElementById("password").value;
-      const cpassword = document.getElementById("c_password").value;
-      const profile = document.getElementById("profile").value;
+const { MongoClient } = require('mongodb');
 
-      const response = await fetch("/signup", {
-        method: "post",
-        headers: {
-          "Content-Type": "application/json;charset=utf-8",
-        },
-        body: JSON.stringify({
-          firstname: firstname,
-          lastname: lastname,
-          birthday: birthday,
-          gender: gender,
-          email: email,
-          username: username,
-          password: password,
-          cpassword: cpassword,
-          profile: profile,
-        }),
-      });
-      const check = await response.json();
-      if (check) {
-        alert("Username Already Existed!");
-      } else {
-        location.href = "homepage.html";
-        alert("Sign Up Succeed!");
-      }
-    });
-});
+const encodedPassword = encodeURIComponent("@W.N5_n9g7XCEgG");
+const mongoDBurl = `mongodb+srv://yding0:${encodedPassword}@cluster0.svrhqzz.mongodb.net/?retryWrites=true&w=majority`;
+
+const curusername = JSON.parse(localStorage.getItem('currentUser')).username; // Replace with the field you want to search by
+console.log(username);
+const curpassword = JSON.parse(localStorage.getItem('currentUser')).password;// Replace with the value you want to find
+
+// Connect to MongoDB and retrieve data
+async function getDataByKey() {
+  const client = new MongoClient(mongoDBurl, { useNewUrlParser: true, useUnifiedTopology: true });
+  try {
+    await client.connect();
+    const database = client.db("PatientTracker");
+    const collection = database.collection("doctor");
+    const result = await collection.findOne({ username: curusername });
+
+    console.log('Result:', result);
+  } finally {
+    await client.close();
+  }
+};
+
+getDataByKey()
+  .then(() => {
+    console.log('Data retrieved successfully.');
+  })
+  .catch((error) => {
+    console.error('Error retrieving data:', error);
+  });
+
+
+// document.addEventListener("DOMContentLoaded", () => {
+//   document
+//     .getElementById("createAccount")
+//     .addEventListener("click", async () => {
+//       console.log("ok");
+//       const firstname = document.getElementById("first_Name").value;
+//       const lastname = document.getElementById("last_Name").value;
+//       const birthday = document.getElementById("birthday").value;
+//       const gender = document.getElementById("disabledSelect").value;
+//       const email = document.getElementById("email").value;
+//       const username = document.getElementById("username").value;
+//       const password = document.getElementById("password").value;
+//       const cpassword = document.getElementById("c_password").value;
+//       const profile = document.getElementById("profile").value;
+
+//       const response = await fetch("/signup", {
+//         method: "post",
+//         headers: {
+//           "Content-Type": "application/json;charset=utf-8",
+//         },
+//         body: JSON.stringify({
+//           firstname: firstname,
+//           lastname: lastname,
+//           birthday: birthday,
+//           gender: gender,
+//           email: email,
+//           username: username,
+//           password: password,
+//           cpassword: cpassword,
+//           profile: profile,
+//         }),
+//       });
+//       const check = await response.json();
+//       if (check) {
+//         alert("Username Already Existed!");
+//       } else {
+//         location.href = "homepage.html";
+//         alert("Sign Up Succeed!");
+//       }
+//     });
+// });
 
 
 // NavBar functions
