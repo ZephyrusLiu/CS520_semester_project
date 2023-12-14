@@ -8,7 +8,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 
-    <link rel="stylesheet" type="text/css" href="dashboard.css">
+    <link rel="stylesheet" type="text/css" href="homepage.css">
+    <!-- <script src="./homepage.js"></script> -->
 </head>
 
 <body class="home_page">
@@ -20,8 +21,8 @@
                 </div>
                 <form class="d-flex text-center">
                     <label id="loginName" class="nav-item loginName fs-5"></label>
-                    <img src="house.svg" alt="Home" class="icon ms-2 me-3">
-                    <img src="person-circle.svg" alt="User" class="icon mx-3">
+                    <img src="./house.svg" alt="Home" class="icon ms-2 me-3">
+                    <img src="./person-circle.svg" alt="User" class="icon mx-3" >
                 </form>
             </div>
         </nav>
@@ -29,8 +30,8 @@
             <div class="container-fluid">
                 <form class="ms-auto">
                     <div class="nav-item sign-in mb-1 fs-6 mx-2 pt-1">
-                        <button type="button" class="btn btn-secondary" id="view_all">View All Patients</button>
-                        <button type="button" class="btn btn-secondary" id="sign_out">Sign Out</button>
+                        <button type="button" class="btn btn-secondary" id="login" onclick="goLogin()">Log In</button>
+                        <button type="button" class="btn btn-secondary" id="signup">Sign Up</button>
                     </div>
                 </form>
             </div>
@@ -42,25 +43,27 @@
         </div>
         <div class="col-6 bg-body-secondary rounded">
             <div class="col d-flex justify-content-center">
-                <label class="mb-3 mt-3 fs-2">Welcome, doctor.</label>
+                <label class="mb-3 fs-2">Welcome!</label>
             </div>
             <form>
                 <div class="mb-3 d-flex justify-content-center">
-                    <label class="form-label"> What would you want to do?</label>
+                    <label class="form-label">Hello Doctor! Welcome to the Patient Tracker System!</label>
+                </div>
+                <div class="mb-3 d-flex justify-content-center">
+                    <label class="form-label">Would you like to login or create an account?</label>
                 </div>
 
                 <div class="row">
-                    <div class="col-12 d-flex justify-content-center mb-3">
-                        <button type="button" class="btn btn-primary btn-block">Add new patient information</button>
+                    <div class="col-6 d-flex justify-content-center mb-3">
+                        <button type="button" class="btn btn-primary btn-block">Create Account</button>
+                    </div>
+                    <div class="col-6 d-flex justify-content-center mb-3">
+                        <button type="button" class="btn btn-primary btn-block">Login</button>
                     </div>
                 </div>
+
                 <div class="row gap"></div>
-                <div class="row">
-                    <div class="col-12 d-flex justify-content-center mb-3">
-                        <button type="button" class="btn btn-primary btn-block">Update patient information</button>
-                    </div>
-                </div>
-                <div class="row gap"></div>
+
             </form>
         </div>
         <div class="col">

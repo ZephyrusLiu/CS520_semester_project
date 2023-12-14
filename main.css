@@ -1,0 +1,31 @@
+#logIn {
+    color: white; 
+}
+
+#signOut {
+    color: white; 
+}
+  
+#signUp {
+    color: white; 
+}
+
+.spacer {
+    padding-top: 80px;
+    padding-bottom: 1000px
+}
+
+.gap{
+    padding-top: 20px
+}
+
+.home_page{
+    background-image: url('bc.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+}
+
+#viewAll {
+    color: white; 
+}
