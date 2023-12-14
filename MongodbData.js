@@ -14,9 +14,9 @@ const connectToMongoDB = async () => {
   }
 };
 
-const getDoctorCollection = () => {
+const getPatientCollection = () => {
   const db = client.db("PatientTracker");
-  return db.collection("doctor");
+  return db.collection("patient");
 };
 
-export { connectToMongoDB, getDoctorCollection };
+export { connectToMongoDB, getPatientCollection };
