@@ -17,6 +17,14 @@ document.addEventListener("DOMContentLoaded", () => {
       has_insurance = true;
     }
 
+    const blood_type = document.getElementById("blood_type").value;
+    const height = document.getElementById("height").value;
+    const weight = document.getElementById("weight").value;
+    const medical_history = document.getElementById("medical_his").value;
+    const family_mh = document.getElementById("family_medical_his").value;
+    const allergic = document.getElementById("allergic").value;
+    const addition_info = document.getElementById("addition_info").value;
+
     const response = await fetch("/add_personal_info", {
       method: "post",
       headers: {
@@ -33,6 +41,14 @@ document.addEventListener("DOMContentLoaded", () => {
         e_phone: e_phone,
         e_email: e_email,
         has_insurance: has_insurance,
+
+        blood_type: blood_type,
+        height: height,
+        weight: weight,
+        medical_history: medical_history,
+        family_mh: family_mh,
+        allergic: allergic,
+        addition_info: addition_info,
       }),
     });
   });
@@ -40,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("next").addEventListener("click", async () => {
-    location.href = "add_health_info.html";
+    location.href = "add_medical_his.html";
   });
 });
 
