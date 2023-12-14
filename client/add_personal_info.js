@@ -13,6 +13,11 @@ function goSignUp() {
     window.location.href = "./signup.html";
 }
 
+function goAllPatients(){
+    window.location.href = "./view_all_patients.html";
+}
+
+
 function signOut() {
     fetch(window.location.origin + '/logout')
         .then((response) => response.json())
