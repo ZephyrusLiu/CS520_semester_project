@@ -27,56 +27,56 @@ app.get('/', function (req, res) {
 });
 
 
-// app.get('/login', function (req, res) {
-// 	console.log(req.params);
-// 	res.sendFile(__dirname + '/login.html');
-// });
+app.get('/login', function (req, res) {
+	console.log(req.params);
+	res.sendFile(__dirname + '/login.html');
+});
 
 
-// app.get('/signup', function (req, res) {
-// 	console.log(req.params);
-// 	res.sendFile(__dirname + '/signup.html');
-// });
+app.get('/signup', function (req, res) {
+	console.log(req.params);
+	res.sendFile(__dirname + '/signup.html');
+});
 
-// app.get('/user/add_health_info', function (req, res) {
-// 	console.log(req.params);
-// 	res.sendFile(__dirname + '/add_health_info.html');
-// });
+app.get('/user/add_health_info', function (req, res) {
+	console.log(req.params);
+	res.sendFile(__dirname + '/add_health_info.html');
+});
 
-// app.get('/user/add_medical_his', function (req, res) {
-// 	console.log(req.params);
-// 	res.sendFile(__dirname + '/add_medical_his.html');
-// });
+app.get('/user/add_medical_his', function (req, res) {
+	console.log(req.params);
+	res.sendFile(__dirname + '/add_medical_his.html');
+});
 
-// app.get('/user/add_personal_info', function (req, res) {
-// 	console.log(req.params);
-// 	res.sendFile(__dirname + '/add_personal_info.html');
-// });
+app.get('/user/add_personal_info', function (req, res) {
+	console.log(req.params);
+	res.sendFile(__dirname + '/add_personal_info.html');
+});
 
-// app.get('/user/dashboard', function (req, res) {
-// 	console.log(req.params);
-// 	res.sendFile(__dirname + '/dashboard.html');
-// });
+app.get('/user/dashboard', function (req, res) {
+	console.log(req.params);
+	res.sendFile(__dirname + '/dashboard.html');
+});
 
-// app.get('/user/view_all_patients', function (req, res) {
-// 	console.log(req.params);
-// 	res.sendFile(__dirname + '/view_all_patients.html');
-// });
+app.get('/user/view_all_patients', function (req, res) {
+	console.log(req.params);
+	res.sendFile(__dirname + '/view_all_patients.html');
+});
 
-// app.get('/user/view_health', function (req, res) {
-// 	console.log(req.params);
-// 	res.sendFile(__dirname + '/view_health.html');
-// });
+app.get('/user/view_health', function (req, res) {
+	console.log(req.params);
+	res.sendFile(__dirname + '/view_health.html');
+});
 
-// app.get('/user/view_personal', function (req, res) {
-// 	console.log(req.params);
-// 	res.sendFile(__dirname + '/view_personal.html');
-// });
+app.get('/user/view_personal', function (req, res) {
+	console.log(req.params);
+	res.sendFile(__dirname + '/view_personal.html');
+});
 
-// app.get('/user/view_treatment', function (req, res) {
-// 	console.log(req.params);
-// 	res.sendFile(__dirname + '/view_treatment.html');
-// });
+app.get('/user/view_treatment', function (req, res) {
+	console.log(req.params);
+	res.sendFile(__dirname + '/view_treatment.html');
+});
 
 
 app.listen(port, () => {
