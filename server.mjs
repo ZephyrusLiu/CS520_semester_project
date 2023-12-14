@@ -44,13 +44,16 @@ try {
 const db = client.db("PatientTracker");
 const collection1 = db.collection("doctor");
 const collection2 = db.collection("patient");
+const collection3 = db.collection("treatment");
 
 const doctor = await collection1.find().toArray();
 const patient = await collection2.find().toArray();
+const treatment = await collection3.find().toArray();
 
 let database = {};
 database["doctor"] = doctor;
 database["patient"] = patient;
+database["treatment"] = treatment;
 
 createServer(async (req, res) => {
   const parsed = parse(req.url, true);
@@ -153,10 +156,40 @@ createServer(async (req, res) => {
       }
       res.end(JSON.stringify(result));
     });
+  } else if (parsed.pathname === "/add_medical_his") {
+    let body = "";
+    let result = false;
+    req.on("data", (data) => (body += data));
+    req.on("end", async () => {
+      const data = JSON.parse(body);
+      const output = {
+        heart_rate: data.heart_rate,
+        oximetry: data.oximetry,
+        h_blood: data.h_blood,
+        l_blood: data.l_blood,
+        record: data.record,
+      };
+      for (let element of database.treatment) {
+        if (output.heart_rate === element.heart_rate) {
+          result = true;
+          break;
+        }
+      }
+      if (!result) {
+        database.doctor.push(output);
+        try {
+          await collection3.insertOne(output);
+          console.log("Treatment record successfully!");
+        } catch (error) {
+          console.error("Error inserting into MongoDB:", error);
+        }
+      }
+      res.end(JSON.stringify(result));
+    });
   } else if (parsed.pathname === "/view_all_patients") {
     res.writeHead(200, { "Content-Type": "application/json" });
     res.end(JSON.stringify(database.patient));
-  }else {
+  } else {
     const filename =
       parsed.pathname === "/"
         ? "homepage.html"
