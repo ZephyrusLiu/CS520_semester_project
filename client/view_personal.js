@@ -22,7 +22,9 @@ function signOut() {
     refreshSign();
 }
 
-
+function goAllPatients(){
+    window.location.href = "./view_all_patients.html";
+}
 
 function goPersonal() {
     const username = localStorage.getItem('username');
