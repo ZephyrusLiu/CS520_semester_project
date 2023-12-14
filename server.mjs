@@ -153,7 +153,10 @@ createServer(async (req, res) => {
       }
       res.end(JSON.stringify(result));
     });
-  } else {
+  } else if (parsed.pathname === "/view_all_patients") {
+    res.writeHead(200, { "Content-Type": "application/json" });
+    res.end(JSON.stringify(database.patient));
+  }else {
     const filename =
       parsed.pathname === "/"
         ? "homepage.html"
