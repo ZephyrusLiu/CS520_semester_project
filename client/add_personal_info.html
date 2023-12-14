@@ -124,6 +124,57 @@
                     </div>
                 </div>
 
+                <div class="col d-flex justify-content-center">
+                    <label class="mb-3 fs-4">Basic Health Information</label>
+                </div>
+
+                <div class="row">
+                    <div class="col-4">
+                        <div class="mb-2">
+                            <label class="form-label">Blood Type</label>
+                            <input type="text" class="form-control" id="blood_type">
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="mb-2">
+                            <label class="form-label">Height</label>
+                            <input type="text" class="form-control" id="height">
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="mb-2">
+                            <label class="form-label">Weight</label>
+                            <input type="text" class="form-control" id="weight">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="mb-2">
+                    <label class="form-label">Medical History</label>
+                    <textarea type="text" class="form-control" rows="2" id="medical_his"></textarea>
+                </div>
+
+
+                <div class="mb-2">
+                    <label class="form-label">Family Medical History</label>
+                    <textarea type="text" class="form-control" rows="2" id="family_medical_his"></textarea>
+                </div>
+
+                <div class="mb-2">
+                    <label class="form-label">Allergic Conditions</label>
+                    <textarea type="text" class="form-control" rows="2" id="allergic"></textarea>
+                </div>
+
+
+                <div class="mb-3">
+                    <label class="form-label">Additional Information:</label>
+                    <textarea type="patient_id" class="form-control" id="addition_info" rows="3"></textarea>
+                </div>
+
+                <div class="row gap"></div>
+
+
                 <div class="mb-3 form-check">
                     <input type="checkbox" class="form-check-input" id="insurance">
                     <label class="form-check-label">Does this patient have health insurance?</label>
@@ -131,14 +182,13 @@
 
                 <p class="fst-italic fw-lighter">Remember to click SAVE CHANGE before you go to next page to add health information,
                     or you will lost the records.</p>
-
-
+                
                 <div class="row">
                     <div class="col-6 d-flex justify-content-center">
                         <button type="button" class="btn btn-primary" id="save">Save change</button>
                     </div>
                     <div class="col-6 d-flex justify-content-center">
-                        <button type="button" class="btn btn-primary" id="next">Continue to Add Health Info</button>
+                        <button type="button" class="btn btn-primary" id="next">Next</button>
                     </div>
                 </div>
 
