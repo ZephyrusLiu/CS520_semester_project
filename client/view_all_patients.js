@@ -32,27 +32,6 @@ fetch("/view_all_patients")
     });
   })
   .catch(error => console.error('Error fetching patient data:', error));
-
-
-// 在view_all_patients.js中使用Fetch API获取患者数据
-fetch("/view_all_patients")
-  .then(response => response.json())
-  .then(data => {
-    // 清空列表
-    const listGroup = document.querySelector('.list-group');
-    listGroup.innerHTML = '';
-
-    // 根据数据创建新的列表项
-    data.forEach(patient => {
-      const listItem = document.createElement('a');
-      listItem.href = "#";
-      listItem.classList.add('list-group-item', 'list-group-item-action');
-      listItem.textContent = `${patient.firstname} ${patient.lastname}, ${patient.phone}, ${patient.email}`;
-      listGroup.appendChild(listItem);
-    });
-  })
-  .catch(error => console.error('Error fetching patient data:', error));
-
   
 // NavBar functions
 function goLogin() {
