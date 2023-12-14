@@ -21,8 +21,8 @@
                 </div>
                 <form class="d-flex text-center">
                     <label id="loginName" class="nav-item loginName fs-5"></label>
-                    <img src="house.svg" alt="Home" class="icon ms-2 me-3">
-                    <img src="person-circle.svg" alt="User" class="icon mx-3">
+                    <img src="/house.svg" alt="Home" class="icon ms-2 me-3" onclick="goHome()">
+                    <img src="/person-circle.svg" alt="User" class="icon mx-3" onclick="goPersonal()">
                 </form>
             </div>
         </nav>
@@ -30,7 +30,7 @@
             <div class="container-fluid">
                 <form class="ms-auto">
                     <div class="nav-item sign-in mb-1 fs-6 mx-2 pt-1">
-                        <button type="button" class="btn btn-secondary" id="login">Log In</button>
+                        <button type="button" class="btn btn-secondary" id="login" onclick="goLogin()">Log In</button>
                         <button type="button" class="btn btn-secondary" id="signup">Sign Up</button>
                     </div>
                 </form>
@@ -42,7 +42,7 @@
         <div class="col">
         </div>
         <div class="col-6 bg-body-secondary rounded">
-            <div class = "col d-flex justify-content-center">
+            <div class="col d-flex justify-content-center">
                 <label class="mb-3 fs-2">Welcome!</label>
             </div>
             <form>
@@ -52,8 +52,8 @@
                 <div class="mb-3 d-flex justify-content-center">
                     <label class="form-label">Would you like to login or create an account?</label>
                 </div>
-                
-                <div class = "row">
+
+                <div class="row">
                     <div class="col-6 d-flex justify-content-center mb-3">
                         <button type="button" class="btn btn-primary btn-block">Create Account</button>
                     </div>
@@ -64,7 +64,7 @@
 
                 <div class="row gap"></div>
 
-              </form>
+            </form>
         </div>
         <div class="col">
         </div>
@@ -72,4 +72,3 @@
 </body>
 
 </html>
-
