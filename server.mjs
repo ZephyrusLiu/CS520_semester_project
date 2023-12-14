@@ -46,7 +46,6 @@ const collection1 = db.collection("doctor");
 
 const doctor = await collection1.find().toArray();
 
-//
 let database = {};
 database["doctor"] = doctor;
 
@@ -93,11 +92,11 @@ createServer(async (req, res) => {
     req.on("end", () => {
       const data = JSON.parse(body);
       var found = false;
-      for (var i = 0; i < database.user.length; i++) {
+      for (var i = 0; i < database.doctor.length; i++) {
         if (
-          (database.user[i].username === data.username ||
-            database.user[i].email === data.email) &&
-          database.user[i].password === data.password
+          (database.doctor[i].username === data.username ||
+            database.doctor[i].email === data.email) &&
+          database.doctor[i].password === data.password
         ) {
           found = true;
           break;
@@ -114,7 +113,7 @@ createServer(async (req, res) => {
       parsed.pathname === "/"
         ? "homepage.html"
         : parsed.pathname.replace("/", "");
-    // console.log("trying to serve " + filename + "...");
+    console.log("trying to serve " + filename + "...");
     serveStaticFile(res, filename);
   }
 }).listen(process.env.PORT || 8080);

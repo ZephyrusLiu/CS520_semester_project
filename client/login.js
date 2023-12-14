@@ -1,56 +1,77 @@
-'use strict';
+"use strict";
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("signin").addEventListener("click", async () => {
+    console.log("ok");
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
+    const response = await fetch("/login", {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json;charset=utf-8",
+      },
+      body: JSON.stringify({
+        username: username,
+        password: password,
+      }),
+    });
+    const check = await response.json();
+    if (!check) {
+      alert("Wrong password!");
+    } else {
+      location.href = "dashboard.html";
+    }
+  });
+});
 
 // NavBar functions
 function goLogin() {
-    window.location.href = "./login.html";
+  window.location.href = "./login.html";
 }
 
 function goHome() {
-    window.location.href = "./homepage.html";
+  window.location.href = "./homepage.html";
 }
 
 function goSignUp() {
-    window.location.href = "./signup.html";
+  window.location.href = "./signup.html";
 }
 
 function signOut() {
-    fetch(window.location.origin + '/logout')
-        .then((response) => response.json())
-        .then((data) => { });
-    localStorage.removeItem("username");
-    localStorage.removeItem("email");
-    refreshSign();
+  fetch(window.location.origin + "/logout")
+    .then((response) => response.json())
+    .then((data) => {});
+  localStorage.removeItem("username");
+  localStorage.removeItem("email");
+  refreshSign();
 }
 
-
-
 function goPersonal() {
-    const username = localStorage.getItem('username');
-    if (username) {
-        window.location.href = "./view_personal.html";
-    } else {
-        localStorage.setItem('nextPage', 'profile.html');
-        window.location.href = "./login.html";
-    }
+  const username = localStorage.getItem("username");
+  if (username) {
+    window.location.href = "./view_personal.html";
+  } else {
+    localStorage.setItem("nextPage", "profile.html");
+    window.location.href = "./login.html";
+  }
 }
 
 function refreshSign() {
-    const username = localStorage.getItem("username");
-    const signIn = document.getElementById("signIn");
-    const signOut = document.getElementById("signOut");
-    const loginName = document.getElementById("loginName");
-    if (username) {
-        signIn.classList.add('hidden');
-        signOut.classList.remove('hidden');
-        loginName.innerHTML = 'Signed in as ' + username;
-    } else {
-        signIn.classList.remove('hidden');
-        signOut.classList.add('hidden');
-        loginName.innerHTML = '';
-    }
+  const username = localStorage.getItem("username");
+  const signIn = document.getElementById("signIn");
+  const signOut = document.getElementById("signOut");
+  const loginName = document.getElementById("loginName");
+  if (username) {
+    signIn.classList.add("hidden");
+    signOut.classList.remove("hidden");
+    loginName.innerHTML = "Signed in as " + username;
+  } else {
+    signIn.classList.remove("hidden");
+    signOut.classList.add("hidden");
+    loginName.innerHTML = "";
+  }
 }
-
-
 
 // Index functions
 // window.onload = async function () {
