@@ -111,8 +111,7 @@ createServer(async (req, res) => {
         res.end(JSON.stringify(false));
       }
     });
-  }
-  if (parsed.pathname === "/add_personal_info") {
+  } else if (parsed.pathname === "/add_personal_info") {
     let body = "";
     let result = false;
     req.on("data", (data) => (body += data));
