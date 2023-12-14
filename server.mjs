@@ -128,6 +128,13 @@ createServer(async (req, res) => {
         e_phone: data.e_phone,
         e_email: data.e_email,
         has_insurance: data.has_insurance,
+        blood_type: data.blood_type,
+        height: data.height,
+        weight: data.weight,
+        medical_history: data.medical_history,
+        family_mh: data.family_mh,
+        allergic: data.allergic,
+        addition_info: data.addition_info,
       };
       for (let element of database.patient) {
         if (output.patient_id === element.patient_id) {
@@ -146,7 +153,10 @@ createServer(async (req, res) => {
       }
       res.end(JSON.stringify(result));
     });
-  } else {
+  } else if (parsed.pathname === "/view_all_patients") {
+    res.writeHead(200, { "Content-Type": "application/json" });
+    res.end(JSON.stringify(database.patient));
+  }else {
     const filename =
       parsed.pathname === "/"
         ? "homepage.html"

@@ -1,5 +1,22 @@
 'use strict';
 
+fetch("/view_all_patients")
+  .then(response => response.json())
+  .then(data => {
+    const listGroup = document.querySelector('.list-group');
+    listGroup.innerHTML = '';
+
+    data.forEach(patient => {
+      const listItem = document.createElement('a');
+      listItem.href = "#";
+      listItem.classList.add('list-group-item', 'list-group-item-action');
+      listItem.textContent = `${patient.firstname} ${patient.lastname}, ${patient.phone}, ${patient.email}`;
+      listGroup.appendChild(listItem);
+    });
+  })
+  .catch(error => console.error('Error fetching patient data:', error));
+
+
 // NavBar functions
 function goLogin() {
     window.location.href = "./login.html";
