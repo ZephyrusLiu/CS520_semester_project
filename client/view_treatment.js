@@ -19,8 +19,11 @@ function fetchAndDisplayTreatmentRecords(patientId) {
 
                 const recordDetails = document.createElement('div');
                 recordDetails.innerHTML = `
-                    <p>Date: ${record.date}</p>
-                    <p>Description: ${record.description}</p>
+                    <p>Heart Rate: ${record.heart_rate}</p>
+                    <p>Oximetry: ${record.oximetry}</p>
+                    <p>High Blood Pressure: ${record.h_blood}</p>
+                    <p>High Blood Pressure: ${record.l_blood}</p>
+                    <p>Record: ${record.record}</p>
                     <!-- Add more details as needed -->
                 `;
 
@@ -61,6 +64,10 @@ function goViewPersonal() {
 
 function goUserinfo() {
     window.location.href = "./userinfo.html";
+}
+
+function goAddTreatment() {
+    window.location.href = "./add_medical_his.html"
 }
 
 function signOut() {
