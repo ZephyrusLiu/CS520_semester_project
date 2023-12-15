@@ -21,36 +21,48 @@ document.addEventListener("DOMContentLoaded", () => {
     const height = document.getElementById("height").value;
     const weight = document.getElementById("weight").value;
     const medical_history = document.getElementById("medical_his").value;
-    const family_mh = document.getElementById("family_medical_his").value;
+    const family_mh = document.getElementById("family_disorder_his").value;
     const allergic = document.getElementById("allergic").value;
     const addition_info = document.getElementById("addition_info").value;
 
-    const response = await fetch("/add_personal_info", {
-      method: "post",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      },
-      body: JSON.stringify({
-        patient_id: patient_id,
-        firstname: firstname,
-        lastname: lastname,
-        birthday: birthday,
-        gender: gender,
-        phone: phone,
-        email: email,
-        e_phone: e_phone,
-        e_email: e_email,
-        has_insurance: has_insurance,
+    if (
+      !patient_id ||
+      !firstname ||
+      !lastname ||
+      !birthday ||
+      !gender ||
+      !phone ||
+      !email
+    ) {
+      alert("Please fill out all required fields.");
+    } else {
+      const response = await fetch("/add_personal_info", {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json;charset=utf-8",
+        },
+        body: JSON.stringify({
+          patient_id: patient_id,
+          firstname: firstname,
+          lastname: lastname,
+          birthday: birthday,
+          gender: gender,
+          phone: phone,
+          email: email,
+          e_phone: e_phone,
+          e_email: e_email,
+          has_insurance: has_insurance,
 
-        blood_type: blood_type,
-        height: height,
-        weight: weight,
-        medical_history: medical_history,
-        family_mh: family_mh,
-        allergic: allergic,
-        addition_info: addition_info,
-      }),
-    });
+          blood_type: blood_type,
+          height: height,
+          weight: weight,
+          medical_history: medical_history,
+          family_mh: family_mh,
+          allergic: allergic,
+          addition_info: addition_info,
+        }),
+      });
+    }
   });
 });
 
@@ -88,7 +100,7 @@ function goDashboard() {
 function signOut() {
   fetch(window.location.origin + "/logout")
     .then((response) => response.json())
-    .then((data) => { });
+    .then((data) => {});
   localStorage.removeItem("username");
   localStorage.removeItem("email");
   refreshSign();

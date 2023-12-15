@@ -10,20 +10,24 @@ document.addEventListener("DOMContentLoaded", () => {
     const l_blood = document.getElementById("low_pressure").value;
     const record = document.getElementById("record").value;
 
-    const response = await fetch("/add_medical_his", {
-      method: "post",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      },
-      body: JSON.stringify({
-        patient_id: patient_id,
-        heart_rate: heart_rate,
-        oximetry: oximetry,
-        h_blood: h_blood,
-        l_blood: l_blood,
-        record: record,
-      }),
-    });
+    if (!patient_id ||!heart_rate ||!oximetry ||!h_blood ||!l_blood ||!record) {
+      alert("Please fill out all required fields.");
+    } else {
+      const response = await fetch("/add_medical_his", {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json;charset=utf-8",
+        },
+        body: JSON.stringify({
+          patient_id: patient_id,
+          heart_rate: heart_rate,
+          oximetry: oximetry,
+          h_blood: h_blood,
+          l_blood: l_blood,
+          record: record,
+        }),
+      });
+    }
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     } else {
