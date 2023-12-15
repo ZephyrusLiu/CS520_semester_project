@@ -14,24 +14,28 @@ document.addEventListener("DOMContentLoaded", () => {
       const password = document.getElementById("password").value;
       const cpassword = document.getElementById("c_password").value;
       const profile = document.getElementById("profile").value;
-
-      const response = await fetch("/signup", {
-        method: "post",
-        headers: {
-          "Content-Type": "application/json;charset=utf-8",
-        },
-        body: JSON.stringify({
-          firstname: firstname,
-          lastname: lastname,
-          birthday: birthday,
-          gender: gender,
-          email: email,
-          username: username,
-          password: password,
-          cpassword: cpassword,
-          profile: profile,
-        }),
-      });
+      
+      if (!firstname ||!lastname ||!birthday ||!gender ||!email||!username ||!cpassword||!profile) {
+        alert("Please fill out all required fields.");
+      } else {
+        const response = await fetch("/signup", {
+          method: "post",
+          headers: {
+            "Content-Type": "application/json;charset=utf-8",
+          },
+          body: JSON.stringify({
+            firstname: firstname,
+            lastname: lastname,
+            birthday: birthday,
+            gender: gender,
+            email: email,
+            username: username,
+            password: password,
+            cpassword: cpassword,
+            profile: profile,
+          }),
+        });
+      }
       const check = await response.json();
       if (check) {
         alert("Username Already Existed!");
@@ -40,6 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
         alert("Sign Up Succeed!");
       }
     });
+  
 });
 
 

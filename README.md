@@ -54,7 +54,7 @@ The main goal of this project is to build a Patient Tracker System designed for 
 | height | string | Height |
 | weight | string | Weight |
 | medical_history | string | Medical History of Patient |
-| family_mh | string | Family/Hereditary Medical History |
+| family_mh | string | Family/Hereditary Disorder History |
 | allergic | string | Allegic Conditions |
 | addition_info | string | Addition Information |
 

@@ -25,15 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const allergic = document.getElementById("allergic").value;
     const addition_info = document.getElementById("addition_info").value;
 
-    if (
-      !patient_id ||
-      !firstname ||
-      !lastname ||
-      !birthday ||
-      !gender ||
-      !phone ||
-      !email
-    ) {
+    if (!patient_id ||!firstname ||!lastname ||!birthday ||!gender ||!phone ||!email) {
       alert("Please fill out all required fields.");
     } else {
       const response = await fetch("/add_personal_info", {
