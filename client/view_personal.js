@@ -23,7 +23,7 @@ function fetchAndDisplayPatientInfo(patientId) {
             document.getElementById('height').value = data.height;
             document.getElementById('weight').value = data.weight;
             document.getElementById('medical_his').value = data.medical_history;
-            document.getElementById('family_medical_his').value = data.family_mh;
+            document.getElementById('family_disorder_his').value = data.family_mh;
             document.getElementById('allergic').value = data.allergic;
             document.getElementById('addition_info').value = data.addition_info;
             document.getElementById('insurance').checked = data.has_insurance;
