@@ -163,6 +163,7 @@ createServer(async (req, res) => {
     req.on("end", async () => {
       const data = JSON.parse(body);
       const output = {
+        patient_id: data.patient_id,
         heart_rate: data.heart_rate,
         oximetry: data.oximetry,
         h_blood: data.h_blood,
