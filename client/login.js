@@ -16,9 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
         password: password,
       }),
     });
-
-
-
+    
     const check = await response.json();
     if (!check) {
       alert("Wrong password!");
