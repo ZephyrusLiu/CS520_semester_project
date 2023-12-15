@@ -5,8 +5,13 @@
 ## Group Members: Yujin Qin, Yuqi Liu, Yi Ding
 
 
-## Overview
-The main goal of this project is to build a Patient Tracker System designed for doctors and healthcare professionals. In today's era of modern big data, the importance of data recording cannot be overstated. Software like this patient tracker system is an efficient and useful tool. This digital system replaces traditional paper records and allows doctors to access patient records remotely and update the database in real time. Furthermore, the system ensures data accuracy and security by using encryption to protect data both in transit and at rest. Employ protocols such as HTTPS will used for secure communication over the network. 
+## How to use
+
+To correctly run this application, please install Node.js on your device and run the following commands:
+npm init
+npm install -S express
+node --experimental-modules server.mjs
+If you correctly run this commands, you could see "Connected correctly to server" in your terminal.
 
 
 ## User Interface
