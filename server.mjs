@@ -107,16 +107,18 @@ createServer(async (req, res) => {
           database.doctor[i].password === data.password
         ) {
           found = true;
+  
+          res.writeHead(200, { "Content-Type": "application/json" });
+          res.end(JSON.stringify(database.doctor[i]));
+  
           break;
         }
       }
-      if (found) {
-        res.end(JSON.stringify(true));
-      } else {
+      if (!found) {
         res.end(JSON.stringify(false));
       }
     });
-  } 
+  }
   
   else if (parsed.pathname === "/add_personal_info") {
     let body = "";

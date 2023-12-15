@@ -17,15 +17,13 @@ document.addEventListener("DOMContentLoaded", () => {
       }),
     });
     
-    const check = await response.json();
-    if (!check) {
+    const doctorInfo = await response.json();
+    if (!doctorInfo) {
       alert("Wrong password!");
     } else {
-      localStorage.setItem('currentUser', JSON.stringify({
-        username: username,
-        password: password,
-      }));
-      console.log(JSON.parse(localStorage.getItem('currentUser')));
+      localStorage.setItem('currentDoctor', JSON.stringify(doctorInfo));
+      console.log(JSON.parse(localStorage.getItem('currentDoctor')));
+      console.log("Save successfully");
       location.href = "dashboard.html";
     }
   });
