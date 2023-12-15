@@ -40,22 +40,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-// NavBar functions
-function goLogin() {
-    window.location.href = "./login.html";
-}
-
-function goHome() {
-    window.location.href = "./homepage.html";
-}
-
-function goSignUp() {
-    window.location.href = "./signup.html";
-}
 
 function goViewTreatment() {
-    window.location.href = "./view_treatment.html";
-}
+    const patientId = getQueryParam('patient_id');
+    window.location.href = `./view_treatment.html?patient_id=${patientId}`;
+  }  
 
 function goViewHealth() {
     window.location.href = "./view_health.html";

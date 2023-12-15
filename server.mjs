@@ -191,12 +191,17 @@ createServer(async (req, res) => {
     res.end(JSON.stringify(database.patient));
   } else if (parsed.pathname === "/get_patient_info") {
     const patientId = parsed.query.patient_id;
-
     const patientInfo = await getPatientInfo(patientId);
 
     res.writeHead(200, { "Content-Type": "application/json" });
     res.end(JSON.stringify(patientInfo));
-  } else {
+  } else if (parsed.pathname === "/get_treatment_records") {
+    const patientId = parsed.query.patient_id;
+    const treatmentRecords = await getTreatmentRecords(patientId);
+
+    res.writeHead(200, { "Content-Type": "application/json" });
+    res.end(JSON.stringify(treatmentRecords));
+} else {
     const filename =
       parsed.pathname === "/"
         ? "homepage.html"
@@ -220,6 +225,24 @@ async function getPatientInfo(patientId) {
     throw error;
   } finally {
     await client.close();
+  }
+}
+
+async function getTreatmentRecords(patientId) {
+  try {
+      await client.connect();
+
+      const db = client.db("PatientTracker");
+      const collection = db.collection("treatment");
+
+      const treatmentRecords = await collection.find({ patient_id: patientId }).toArray();
+
+      return treatmentRecords || null;
+  } catch (error) {
+      console.error("Error fetching treatment records:", error);
+      throw error;
+  } finally {
+      await client.close();
   }
 }
 

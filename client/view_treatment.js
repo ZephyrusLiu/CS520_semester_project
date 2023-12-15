@@ -1,5 +1,46 @@
 'use strict';
 
+function getQueryParam(parameterName) {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    return urlParams.get(parameterName);
+}
+
+function fetchAndDisplayTreatmentRecords(patientId) {
+    fetch(`/get_treatment_records?patient_id=${patientId}`)
+        .then(response => response.json())
+        .then(treatmentRecords => {
+            const listGroup = document.querySelector('.list-group');
+            listGroup.innerHTML = '';
+
+            treatmentRecords.forEach(record => {
+                const listItem = document.createElement('div');
+                listItem.classList.add('list-group-item', 'list-group-item-action');
+
+                const recordDetails = document.createElement('div');
+                recordDetails.innerHTML = `
+                    <p>Date: ${record.date}</p>
+                    <p>Description: ${record.description}</p>
+                    <!-- Add more details as needed -->
+                `;
+
+                listItem.appendChild(recordDetails);
+                listGroup.appendChild(listItem);
+            });
+        })
+        .catch(error => console.error('Error fetching treatment records:', error));
+}
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const patientId = getQueryParam('patient_id');
+    if (patientId) {
+        fetchAndDisplayTreatmentRecords(patientId);
+    } else {
+        console.error('Patient ID not found in the URL.');
+    }
+});
+
 // NavBar functions
 function goLogin() {
     window.location.href = "./login.html";
