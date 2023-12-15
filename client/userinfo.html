@@ -104,6 +104,39 @@
                         <button type="button" class="btn btn-primary btn-block" id="savechanges">Save Changes</button>
                     </div>
                 </div>
+
+                <script>
+                    document.getElementById("savechanges").addEventListener("click", async () => {
+                        // Retrieve updated values from the form
+                        const updatedInfo = {
+                          firstname: document.getElementById("first_Name").value,
+                          lastname: document.getElementById("last_Name").value,
+                          birthday: document.getElementById("birthday").value,
+                          gender: document.getElementById("disabledSelect").value,
+                          email: document.getElementById("email").value,
+                          username: document.getElementById("username").value,
+                          password: document.getElementById("password").value,
+                          profile: document.getElementById("profile").value
+                        };
+                    
+                        const response = await fetch("/update_doctor_info", {
+                          method: "POST",
+                          headers: {
+                            "Content-Type": "application/json;charset=utf-8",
+                          },
+                          body: JSON.stringify({ updatedInfo }),
+                        });
+                    
+                        const result = await response.json();
+                    
+                        if (result.success) {
+                          localStorage.setItem('currentDoctor', JSON.stringify(updatedInfo));
+                          alert("Doctor information updated successfully!");
+                        } else {
+                          console.error("Failed to update doctor information on the server.");
+                        }
+                      });
+                </script>
                 <div class="row gap"></div>
 
 

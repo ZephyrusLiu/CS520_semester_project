@@ -56,6 +56,7 @@ database["patient"] = patient;
 database["treatment"] = treatment;
 
 createServer(async (req, res) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
   const parsed = parse(req.url, true);
 
   if (parsed.pathname === "/signup") {
@@ -216,6 +217,48 @@ createServer(async (req, res) => {
     res.writeHead(200, { "Content-Type": "application/json" });
     res.end(JSON.stringify(treatmentRecords));
   } 
+
+  else if (parsed.pathname === "/update_doctor_info" && req.method === "POST") {
+    let body = "";
+    req.on("data", (data) => (body += data));
+    req.on("end", async () => {
+      try {
+        const data = JSON.parse(body);
+        const updatedInfo = data.updatedInfo;
+  
+        // Update the doctor information in the database
+        const filter = { username: updatedInfo.username };
+        const update = {
+          $set: {
+            firstname: updatedInfo.firstname,
+            lastname: updatedInfo.lastname,
+            birthday: updatedInfo.birthday,
+            gender: updatedInfo.gender,
+            email: updatedInfo.email,
+            username: updatedInfo.username,
+            password: updatedInfo.password,
+            profile: updatedInfo.profile
+          },
+        };
+  
+        const result = await collection1.updateOne(filter, update);
+  
+        if (result.modifiedCount > 0) {
+          // Update successful
+          res.writeHead(200, { "Content-Type": "application/json" });
+          res.end(JSON.stringify({ success: true }));
+        } else {
+          // No matching doctor found or no changes made
+          res.writeHead(404, { "Content-Type": "application/json" });
+          res.end(JSON.stringify({ success: false, error: "Doctor not found or no changes made." }));
+        }
+      } catch (error) {
+        console.error("Error updating doctor information:", error);
+        res.writeHead(500, { "Content-Type": "application/json" });
+        res.end(JSON.stringify({ success: false, error: "Internal server error." }));
+      }
+    });
+  }
   
   // else if (parsed.pathname === "/userinfo") {
   //   const doctorId = parsed.query.username;

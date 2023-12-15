@@ -2,8 +2,6 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   // Retrieve doctorInfo from local storage
-  console.log(JSON.parse(localStorage.getItem('currentDoctor')));
-  console.log("Save successfully");
   const doctorInfo = JSON.parse(localStorage.getItem('currentDoctor'));
 
   if (doctorInfo) {
