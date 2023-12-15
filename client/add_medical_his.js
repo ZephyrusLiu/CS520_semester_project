@@ -27,12 +27,13 @@ document.addEventListener("DOMContentLoaded", () => {
           record: record,
         }),
       });
-    }
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    } else {
-      location.href = "dashboard.html";
-      alert("You created a patient record!");
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      } else {
+        location.href = "dashboard.html";
+        alert("You created a patient record!");
+      }
     }
   });
 });

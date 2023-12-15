@@ -33,13 +33,14 @@ document.addEventListener("DOMContentLoaded", () => {
             profile: profile,
           }),
         });
-      }
-      const check = await response.json();
-      if (check) {
-        alert("Username Already Existed!");
-      } else {
-        location.href = "homepage.html";
-        alert("Sign Up Succeed!");
+
+        const check = await response.json();
+        if (check) {
+          alert("Username Already Existed!");
+        } else {
+          location.href = "homepage.html";
+          alert("Sign Up Succeed!");
+        }
       }
     });
   
