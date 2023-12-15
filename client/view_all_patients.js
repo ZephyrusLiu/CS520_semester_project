@@ -8,9 +8,15 @@ fetch("/view_all_patients")
 
     data.forEach(patient => {
       const listItem = document.createElement('a');
-      listItem.href = "#";
+      listItem.href = "#"; 
       listItem.classList.add('list-group-item', 'list-group-item-action');
       listItem.textContent = `${patient.firstname} ${patient.lastname}, ${patient.phone}, ${patient.email}`;
+
+      listItem.addEventListener('click', () => {
+        
+        window.location.href = `./view_personal.html?patient_id=${patient.patient_id}`;
+      });
+
       listGroup.appendChild(listItem);
     });
   })
