@@ -76,7 +76,15 @@ All users are required to create an account with a unique username and password 
 
 
 ## Division of Labor
-To be finished.
+
+### Yujin Qin
+Designed initial user interface, drew raw UI frame.
+Implemented user interface using HTML and javascript, applied CSS style.
+Finished the functionalities of website buttons.
+Completed the data visualization functionality.
+
+### Yuqi Liu
+Implemented user interface using HTML and javascript, applied CSS style.
 
 
 ## Conclusion
