@@ -72,7 +72,6 @@ createServer(async (req, res) => {
         email: data.email,
         username: data.username,
         password: data.password,
-        cpassword: data.cpassword,
         profile: data.profile,
       };
       for (let element of database.doctor) {

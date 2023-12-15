@@ -12,10 +12,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const email = document.getElementById("email").value;
       const username = document.getElementById("username").value;
       const password = document.getElementById("password").value;
-      const cpassword = document.getElementById("c_password").value;
       const profile = document.getElementById("profile").value;
       
-      if (!firstname ||!lastname ||!birthday ||!gender ||!email||!username ||!cpassword||!profile) {
+      if (!firstname || !lastname || !birthday || !gender || !email || !password || !profile) {
         alert("Please fill out all required fields.");
       } else {
         const response = await fetch("/signup", {
@@ -31,7 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
             email: email,
             username: username,
             password: password,
-            cpassword: cpassword,
             profile: profile,
           }),
         });
