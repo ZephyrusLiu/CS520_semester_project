@@ -21,6 +21,10 @@ function goViewPersonal() {
     window.location.href = "./view_personal.html";
 }
 
+function goUserinfo() {
+    window.location.href = "./userinfo.html";
+}
+
 function signOut() {
     fetch(window.location.origin + '/logout')
         .then((response) => response.json())

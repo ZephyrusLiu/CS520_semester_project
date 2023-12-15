@@ -13,6 +13,10 @@ function goSignUp() {
     window.location.href = "./signup.html";
 }
 
+function goUserinfo() {
+    window.location.href = "./userinfo.html";
+}
+
 function signOut() {
     fetch(window.location.origin + '/logout')
         .then((response) => response.json())

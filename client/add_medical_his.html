@@ -22,7 +22,7 @@
                 <form class="d-flex text-center">
                     <label id="loginName" class="nav-item loginName fs-5"></label>
                     <img type="button" src="./house.svg" alt="Home" class="icon ms-2 me-3" onclick="goHome()">
-                    <img type="button" src="./person-circle.svg" alt="User" class="icon mx-3" onclick="goPersonal()">
+                    <img type="button" src="./person-circle.svg" alt="User" class="icon mx-3" onclick="goUserinfo()">
                 </form>
             </div>
         </nav>
@@ -31,8 +31,10 @@
                 <form class="ms-auto">
                     <div class="col">
                         <div class="nav-item sign-in mb-1 fs-6 mx-2 pt-1">
-                            <button type="button" class="btn btn-secondary" id="view_all" onclick="goAllPatients()">View All Patients</button>
-                            <button type="button" class="btn btn-secondary" id="sign_out" onclick="goHome()">Sign Out</button>
+                            <button type="button" class="btn btn-secondary" id="view_all" onclick="goAllPatients()">View
+                                All Patients</button>
+                            <button type="button" class="btn btn-secondary" id="sign_out" onclick="goHome()">Sign
+                                Out</button>
                         </div>
                     </div>
                     <form>
@@ -51,6 +53,12 @@
                 <label class="mb-3 fs-4">Routine Testing Data</label>
             </div>
             <form>
+
+                <div class="mb-3">
+                    <label class="form-label">Patient ID:</label>
+                    <input type="text" class="form-control" id="id">
+                </div>
+
                 <div class="mb-3">
                     <label class="form-label">Heart Rate(Last Monitored):</label>
                     <input type="text" class="form-control" id="heart_rate">

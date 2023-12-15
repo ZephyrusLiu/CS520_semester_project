@@ -31,6 +31,10 @@ function goViewPatients() {
   window.location.href = "./view_all_patients.html";
 }
 
+function goUserinfo() {
+  window.location.href = "./userinfo.html";
+}
+
 function signOut() {
   fetch(window.location.origin + "/logout")
     .then((response) => response.json())
