@@ -83,11 +83,11 @@ All users are required to create an account with a unique username and password 
 ## Division of Labor
 
 ### Yujin Qin
-Designed initial user interface, drew raw UI frame.
+Designed initial user interface, and drew raw UI frame.
 Implemented user interface using HTML and javascript, applied CSS style.
 Finished the functionalities of website buttons.
 Completed the data visualization functionality.
-Completed the README.md, half of the final report, made flowchart of project.
+Completed the README.md, half of the final report, and made a flowchart of the project.
 Designed database structure for user, patient, and treatment.
 
 ### Yuqi Liu
@@ -100,9 +100,9 @@ Implemented client side RESTful API call and fetch for both sync and async calls
 ### Yi Ding
 Implemented the subscribing notification functionality.
 Completed half of the final report.
-Built server.js, MongoDB database and connect to Express server.
-Implemented client side RESTful API call and fetch for both sync and async calls.
-Dynamited client site website based on MongoDB data for add info and update info pages.
+Built server.js, MongoDB database, and connected to Express server.
+Implemented client-side RESTful API calls and fetch for both sync and async calls.
+Dynamited client site website based on MongoDB data for adding info and updating info pages.
 
 
 ## Conclusion
