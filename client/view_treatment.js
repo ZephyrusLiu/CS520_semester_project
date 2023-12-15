@@ -6,6 +6,10 @@ function getQueryParam(parameterName) {
     return urlParams.get(parameterName);
 }
 
+function check(){
+    console.log("whoooo");
+}
+
 function fetchAndDisplayTreatmentRecords(patientId) {
     fetch(`/get_treatment_records?patient_id=${patientId}`)
         .then(response => response.json())
@@ -62,48 +66,37 @@ function DataVisualization() {
 
 function generateLinePlot(hr, oxi, highpre, lowpre) {
     // Create traces for each array
-    const trace1 = {
+    const trace = [{
         x: Array.from({ length: hr.length }, (_, i) => i + 1),
         y: hr,
         type: 'scatter',
         mode: 'lines',
         name: 'Heart Rate'
-    };
-    const trace2 = {
+    }, {
         x: Array.from({ length: oxi.length }, (_, i) => i + 1),
         y: oxi,
         type: 'scatter',
         mode: 'lines',
         name: 'Oximetry'
-    };
-    const trace3 = {
+    }, {
         x: Array.from({ length: highpre.length }, (_, i) => i + 1),
         y: highpre,
         type: 'scatter',
         mode: 'lines',
         name: 'High Blood Pressure'
-    };
-    const trace4 = {
+    }, {
         x: Array.from({ length: lowpre.length }, (_, i) => i + 1),
         y: lowpre,
         type: 'scatter',
         mode: 'lines',
         name: 'Low Blood Pressure'
-    };
+    }];
     const layout = {
         title: 'Patient Treatment Records',
         xaxis: { title: 'Treatment Record Index' },
         yaxis: { title: 'Value' }
     };
-
-    Plotly.newPlot('linePlotPopup', [trace1, trace2, trace3, trace4], layout);
-
-    const popupWindow = window.open('', '_blank', 'width=600,height=400');
-    popupWindow.document.write('<html><head><title>Line Plot Popup</title></head><body>');
-    popupWindow.document.write('<div id="linePlotPopup"></div>');
-    popupWindow.document.write('<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>');
-    popupWindow.document.write('<script>Plotly.newPlot("linePlotPopup", ' + JSON.stringify([trace1, trace2, trace3, trace4]) + ', ' + JSON.stringify(layout) + ');</script>');
-    popupWindow.document.write('</body></html>');
+    Plotly.newPlot('linePlotPopup', trace, layout);
 }
 
 
