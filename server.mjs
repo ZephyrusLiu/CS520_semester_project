@@ -92,7 +92,9 @@ createServer(async (req, res) => {
       }
       res.end(JSON.stringify(result));
     });
-  } else if (parsed.pathname === "/login") {
+  } 
+  
+  else if (parsed.pathname === "/login") {
     let body = "";
     req.on("data", (data) => (body += data));
     req.on("end", () => {
@@ -114,7 +116,9 @@ createServer(async (req, res) => {
         res.end(JSON.stringify(false));
       }
     });
-  } else if (parsed.pathname === "/add_personal_info") {
+  } 
+  
+  else if (parsed.pathname === "/add_personal_info") {
     let body = "";
     let result = false;
     req.on("data", (data) => (body += data));
@@ -156,7 +160,9 @@ createServer(async (req, res) => {
       }
       res.end(JSON.stringify(result));
     });
-  } else if (parsed.pathname === "/add_medical_his") {
+  } 
+  
+  else if (parsed.pathname === "/add_medical_his") {
     let body = "";
     let result = false;
     req.on("data", (data) => (body += data));
@@ -187,22 +193,37 @@ createServer(async (req, res) => {
       }
       res.end(JSON.stringify(result));
     });
-  } else if (parsed.pathname === "/view_all_patients") {
+  } 
+  
+  else if (parsed.pathname === "/view_all_patients") {
     res.writeHead(200, { "Content-Type": "application/json" });
     res.end(JSON.stringify(database.patient));
-  } else if (parsed.pathname === "/get_patient_info") {
+  } 
+  
+  else if (parsed.pathname === "/get_patient_info") {
     const patientId = parsed.query.patient_id;
     const patientInfo = await collection2.findOne({ patient_id: patientId });
     res.writeHead(200, { "Content-Type": "application/json" });
     res.end(JSON.stringify(patientInfo));
-  } else if (parsed.pathname === "/get_treatment_records") {
+  } 
+  
+  else if (parsed.pathname === "/get_treatment_records") {
     const patientId = parsed.query.patient_id;
     const treatmentRecords = await collection3
       .find({ patient_id: patientId })
       .toArray();
     res.writeHead(200, { "Content-Type": "application/json" });
     res.end(JSON.stringify(treatmentRecords));
-  } else {
+  } 
+  
+  // else if (parsed.pathname === "/userinfo") {
+  //   const doctorId = parsed.query.username;
+  //   const doctorInfo = await collection1.findOne({ username: doctorId });
+  //   res.writeHead(200, { "Content-Type": "application/json" });
+  //   res.end(JSON.stringify(doctorInfo));
+  // } 
+  
+  else {
     const filename =
       parsed.pathname === "/"
         ? "homepage.html"
