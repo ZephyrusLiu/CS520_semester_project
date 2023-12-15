@@ -50,9 +50,17 @@ function goViewHealth() {
     window.location.href = "./view_health.html";
 }
 
+function goHome() {
+    window.location.href = "./homepage.html";
+}
+
 function goUserinfo() {
     window.location.href = "./userinfo.html";
 }
+
+function goDashboard() {
+    window.location.href = "./dashboard.html";
+  }
 
 function signOut() {
     fetch(window.location.origin + '/logout')

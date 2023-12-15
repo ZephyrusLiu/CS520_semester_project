@@ -38,6 +38,10 @@ function goLogin() {
   window.location.href = "./login.html";
 }
 
+function goDashboard() {
+  window.location.href = "./dashboard.html";
+}
+
 function goHome() {
   window.location.href = "./homepage.html";
 }

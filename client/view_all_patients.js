@@ -8,12 +8,12 @@ fetch("/view_all_patients")
 
     data.forEach(patient => {
       const listItem = document.createElement('a');
-      listItem.href = "#"; 
+      listItem.href = "#";
       listItem.classList.add('list-group-item', 'list-group-item-action');
       listItem.textContent = `${patient.firstname} ${patient.lastname}, ${patient.phone}, ${patient.email}`;
 
       listItem.addEventListener('click', () => {
-        
+
         window.location.href = `./view_personal.html?patient_id=${patient.patient_id}`;
       });
 
@@ -27,12 +27,16 @@ function goLogin() {
   window.location.href = "./login.html";
 }
 
-function goHome() {
-  window.location.href = "./homepage.html";
+function goDashboard() {
+  window.location.href = "./dashboard.html";
 }
 
 function goSignUp() {
   window.location.href = "./signup.html";
+}
+
+function goHome() {
+  window.location.href = "./homepage.html";
 }
 
 function signOut() {
