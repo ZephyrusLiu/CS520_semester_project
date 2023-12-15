@@ -3,7 +3,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("complete").addEventListener("click", async () => {
     console.log("ok");
-    const id = document.getElementById("id").value;
+    const patient_id = document.getElementById("id").value;
     const heart_rate = document.getElementById("heart_rate").value;
     const oximetry = document.getElementById("oximetry").value;
     const h_blood = document.getElementById("high_pressure").value;
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Content-Type": "application/json;charset=utf-8",
       },
       body: JSON.stringify({
-        id: id,
+        patient_id: patient_id,
         heart_rate: heart_rate,
         oximetry: oximetry,
         h_blood: h_blood,
@@ -57,7 +57,7 @@ function goUserinfo() {
 function signOut() {
   fetch(window.location.origin + "/logout")
     .then((response) => response.json())
-    .then((data) => { });
+    .then((data) => {});
   localStorage.removeItem("username");
   localStorage.removeItem("email");
   refreshSign();
