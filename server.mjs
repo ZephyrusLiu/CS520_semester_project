@@ -189,15 +189,39 @@ createServer(async (req, res) => {
   } else if (parsed.pathname === "/view_all_patients") {
     res.writeHead(200, { "Content-Type": "application/json" });
     res.end(JSON.stringify(database.patient));
+  } else if (parsed.pathname === "/get_patient_info") {
+    const patientId = parsed.query.patient_id;
+    
+    const patientInfo = await getPatientInfo(patientId);
+
+    res.writeHead(200, { "Content-Type": "application/json" });
+    res.end(JSON.stringify(patientInfo));
   } else {
     const filename =
       parsed.pathname === "/"
         ? "homepage.html"
         : parsed.pathname.replace("/", "");
-    // console.log("trying to serve " + filename + "...");
     serveStaticFile(res, filename);
   }
 }).listen(process.env.PORT || 8080);
+
+async function getPatientInfo(patientId) {
+  try {
+    await client.connect();
+
+    const db = client.db("PatientTracker");
+    const collection = db.collection("patient");
+
+    const patientInfo = await collection.findOne({ patient_id: patientId });
+
+    return patientInfo || null;
+  } catch (error) {
+    console.error("Error fetching patient information:", error);
+    throw error;
+  } finally {
+    await client.close();
+  }
+}
 
 //process.env.PORT || 8080
 

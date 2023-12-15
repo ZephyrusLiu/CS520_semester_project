@@ -1,5 +1,45 @@
 'use strict';
 
+function getQueryParam(parameterName) {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    return urlParams.get(parameterName);
+}
+
+function fetchAndDisplayPatientInfo(patientId) {
+    fetch(`/get_patient_info?patient_id=${patientId}`) 
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('patient_id').value = data.patient_id;
+            document.getElementById('first_Name').value = data.firstname;
+            document.getElementById('last_Name').value = data.lastname;
+            document.getElementById('birthday').value = data.birthday;
+            document.getElementById("disabledSelect").value = data.gender;
+            document.getElementById('phone').value = data.phone;
+            document.getElementById('email').value = data.email;
+            document.getElementById('e_phone').value = data.e_phone;
+            document.getElementById('e_email').value = data.e_email;
+            document.getElementById('blood_type').value = data.blood_type;
+            document.getElementById('height').value = data.height;
+            document.getElementById('weight').value = data.weight;
+            document.getElementById('medical_his').value = data.medical_history;
+            document.getElementById('family_medical_his').value = data.family_mh;
+            document.getElementById('allergic').value = data.allergic;
+            document.getElementById('addition_info').value = data.addition_info;
+            document.getElementById('insurance').checked = data.has_insurance;
+        })
+        .catch(error => console.error('Error fetching patient information:', error));
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    const patientId = getQueryParam('patient_id');
+    if (patientId) {
+        fetchAndDisplayPatientInfo(patientId);
+    } else {
+        console.error('Patient ID not found in the URL.');
+    }
+});
+
 // NavBar functions
 function goLogin() {
     window.location.href = "./login.html";
