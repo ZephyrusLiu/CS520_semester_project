@@ -1,36 +1,36 @@
 "use strict";
 
-const { MongoClient } = require('mongodb');
+// const { MongoClient } = require('mongodb');
 
-const encodedPassword = encodeURIComponent("@W.N5_n9g7XCEgG");
-const mongoDBurl = `mongodb+srv://yding0:${encodedPassword}@cluster0.svrhqzz.mongodb.net/?retryWrites=true&w=majority`;
+// const encodedPassword = encodeURIComponent("@W.N5_n9g7XCEgG");
+// const mongoDBurl = `mongodb+srv://yding0:${encodedPassword}@cluster0.svrhqzz.mongodb.net/?retryWrites=true&w=majority`;
 
-const curusername = JSON.parse(localStorage.getItem('currentUser')).username; // Replace with the field you want to search by
-console.log(username);
-const curpassword = JSON.parse(localStorage.getItem('currentUser')).password;// Replace with the value you want to find
+// const curusername = JSON.parse(localStorage.getItem('currentUser')).username; // Replace with the field you want to search by
+// console.log(username);
+// const curpassword = JSON.parse(localStorage.getItem('currentUser')).password;// Replace with the value you want to find
 
-// Connect to MongoDB and retrieve data
-async function getDataByKey() {
-  const client = new MongoClient(mongoDBurl, { useNewUrlParser: true, useUnifiedTopology: true });
-  try {
-    await client.connect();
-    const database = client.db("PatientTracker");
-    const collection = database.collection("doctor");
-    const result = await collection.findOne({ username: curusername });
+// // Connect to MongoDB and retrieve data
+// async function getDataByKey() {
+//   const client = new MongoClient(mongoDBurl, { useNewUrlParser: true, useUnifiedTopology: true });
+//   try {
+//     await client.connect();
+//     const database = client.db("PatientTracker");
+//     const collection = database.collection("doctor");
+//     const result = await collection.findOne({ username: curusername });
 
-    console.log('Result:', result);
-  } finally {
-    await client.close();
-  }
-};
+//     console.log('Result:', result);
+//   } finally {
+//     await client.close();
+//   }
+// };
 
-getDataByKey()
-  .then(() => {
-    console.log('Data retrieved successfully.');
-  })
-  .catch((error) => {
-    console.error('Error retrieving data:', error);
-  });
+// getDataByKey()
+//   .then(() => {
+//     console.log('Data retrieved successfully.');
+//   })
+//   .catch((error) => {
+//     console.error('Error retrieving data:', error);
+//   });
 
 
 // document.addEventListener("DOMContentLoaded", () => {
