@@ -17,9 +17,6 @@ function goViewPersonal() {
     window.location.href = "./view_personal.html";
 }
 
-function goViewHealth() {
-    window.location.href = "./view_health.html";
-}
 
 function goUserinfo() {
     window.location.href = "./userinfo.html";

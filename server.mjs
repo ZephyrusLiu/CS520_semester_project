@@ -191,7 +191,7 @@ createServer(async (req, res) => {
     res.end(JSON.stringify(database.patient));
   } else if (parsed.pathname === "/get_patient_info") {
     const patientId = parsed.query.patient_id;
-    
+
     const patientInfo = await getPatientInfo(patientId);
 
     res.writeHead(200, { "Content-Type": "application/json" });
