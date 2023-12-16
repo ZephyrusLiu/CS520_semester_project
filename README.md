@@ -93,9 +93,13 @@ Designed database structure for user, patient, and treatment.
 ### Yuqi Liu
 Contributed to the design of initial UI.
 Implemented user interface using HTML and javascript, applied CSS style.
-Implemented create, read, update, delete functionality for users.
-Finished image upload and download functionality in both front and back-end.
+Implemented page href functionality
+Implemented initial version of server.
+Implemented data transportation between client and database.
+Implemented create, read, update functionality for users.
 Implemented client side RESTful API call and fetch for both sync and async calls.
+Implemented unit tests
+Participated midterm and final report
 
 ### Yi Ding
 Implemented the subscribing notification functionality.
