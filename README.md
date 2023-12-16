@@ -107,6 +107,7 @@ Completed half of the final report.
 Built server.js, MongoDB database, and connected to Express server.
 Implemented client-side RESTful API calls and fetch for both sync and async calls.
 Dynamited client site website based on MongoDB data for adding info and updating info pages.
+Finished notification functionality.
 
 
 ## Conclusion
