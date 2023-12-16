@@ -87,7 +87,8 @@ Designed initial user interface, and drew raw UI frame.
 Implemented user interface using HTML and javascript, applied CSS style.
 Finished the functionalities of website buttons.
 Completed the data visualization functionality.
-Completed the README.md, half of the final report, and made a flowchart of the project.
+Completed the README.md and final report. 
+Made a flowchart of the project.
 Designed database structure for user, patient, and treatment.
 
 ### Yuqi Liu
@@ -103,7 +104,7 @@ Participated midterm and final report
 
 ### Yi Ding
 Implemented the subscribing notification functionality.
-Completed half of the final report.
+Completed part of the final report.
 Built server.js, MongoDB database, and connected to Express server.
 Implemented client-side RESTful API calls and fetch for both sync and async calls.
 Dynamited client site website based on MongoDB data for adding info and updating info pages.
