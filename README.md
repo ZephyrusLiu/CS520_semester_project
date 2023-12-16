@@ -96,7 +96,7 @@ Implemented user interface using HTML and javascript, applied CSS style.
 Implemented page href functionality
 Implemented initial version of server.
 Implemented data transportation between client and database.
-Implemented create, read, update functionality for users.
+Implemented create data functionality, load data from database, and update data to database functionality(Create, read, update)
 Implemented client side RESTful API call and fetch for both sync and async calls.
 Implemented unit tests
 Participated midterm and final report
