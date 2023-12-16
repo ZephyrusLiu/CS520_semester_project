@@ -17,6 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
     console.error("Doctor information not found.");
   }
 
+  console.log("Save successfully");
+
   document.getElementById("savechanges").addEventListener("click", async () => {
     const updatedInfo = {
       firstname: document.getElementById("first_Name").value,
@@ -54,6 +56,10 @@ function goAllPatients() {
 
 function goUserinfo() {
   window.location.href = "./userinfo.html";
+}
+
+function goDashboard() {
+  window.location.href = "./dashboard.html";
 }
 
 function signOut() {

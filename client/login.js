@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.setItem('currentDoctor', JSON.stringify(doctorInfo));
       console.log(JSON.parse(localStorage.getItem('currentDoctor')));
       console.log("Save successfully");
-      location.href = "dashboard.html";
+      window.location.href = "dashboard.html";
     }
   });
 });
